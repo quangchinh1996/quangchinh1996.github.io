@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BTVNDHUDT7_1412056</title>
+<script type="application/javascript" language="javascript" defer>
+	document.addEventListener('DOMContentLoaded', function(){  
+   	var v = document.getElementById('video');  
+	var canvas = document.getElementById('canvas');  
+	var context = canvas.getContext('2d');   
+	var cw = Math.floor(canvas.clientWidth);  
+	var ch = Math.floor(canvas.clientHeight);  
+
+	canvas.width  = cw;  
+	canvas.height = ch;  
+	video.addEventListener('play', function()
+		{  
+			draw(this, context, cw, ch );  
+	   	},false);  
+	},false);
+	
+	function draw(v,c,w,h) 
+	{  
+		if(v.paused || v.ended) return false;
+		c.filter = "blur(5px)";
+	   	c.drawImage(v, 0, 0, w, h);  
+	   	setTimeout(draw, 30, v, c, w, h );  
+	}  
+	</script>
+</head>
+
+<body>
+<div>
+	<h1>BTVN DHUD T7</h1>
+</div>
+<div>
+	<p1>Normal video</p1><br>
+	<video id="video" src="Yakuza 0 - Karaoke - 24-Hour Cinderella [Cinematic].mp4" controls loop = "false" height="360" width="640"></video>
+	<br>
+	<p2>Gaussian video</p2>
+	<br>
+	<canvas id= "canvas" height="360" width="640"></canvas>
+	</canvas>
+</div>
+
+</body>
+</html>
